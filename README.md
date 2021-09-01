@@ -10,7 +10,7 @@ The problem to solve involves the scheduling of production orders in a factory. 
 
 The model diagram is as follows:
 
-![](Scala-Project-2021/1160941-tap-2021-g1-m1b-1b87b44697b8 2/docs/DomainModel.png)
+![DomainModel](https://user-images.githubusercontent.com/46728174/131755625-05572b79-d97e-436e-b9a5-f77dcf107625.png)
 
 
 
