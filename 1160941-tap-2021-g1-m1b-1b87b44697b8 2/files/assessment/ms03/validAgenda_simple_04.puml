@@ -1,0 +1,7 @@
+@startgantt
+[ORD_1 1 TSK_1] lasts 5 days
+[ORD_2 1 TSK_2] lasts 3 days
+[ORD_3 1 TSK_3] lasts 2 days
+[ORD_3 2 TSK_3] lasts 2 days
+[ORD_3 2 TSK_3] starts at [ORD_3 1 TSK_3]'s end
+@endgantt

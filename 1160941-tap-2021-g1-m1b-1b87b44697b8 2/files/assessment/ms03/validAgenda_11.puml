@@ -1,0 +1,16 @@
+@startgantt
+[ORD_1 1 TSK_1] lasts 5 days
+[ORD_1 1 TSK_2] lasts 3 days
+[ORD_2 1 TSK_3] lasts 2 days
+[ORD_2 1 TSK_4] lasts 4 days
+[ORD_1 2 TSK_1] lasts 5 days
+[ORD_1 2 TSK_2] lasts 3 days
+[ORD_2 2 TSK_3] lasts 2 days
+[ORD_2 2 TSK_4] lasts 4 days
+[ORD_2 1 TSK_4] starts at [ORD_2 1 TSK_3]'s end
+[ORD_1 1 TSK_2] starts at [ORD_1 1 TSK_1]'s end
+[ORD_1 2 TSK_1] starts at [ORD_2 1 TSK_4]'s end
+[ORD_2 2 TSK_3] starts at [ORD_1 1 TSK_2]'s end
+[ORD_2 2 TSK_4] starts at [ORD_2 2 TSK_3]'s end
+[ORD_1 2 TSK_2] starts at [ORD_1 2 TSK_1]'s end
+@endgantt

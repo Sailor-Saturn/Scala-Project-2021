@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schedule xmlns="http://www.dei.isep.ipp.pt/tap-2021" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dei.isep.ipp.pt/tap-2021 ../../schedule.xsd ">
+    <TaskSchedule order="ORD_1" productNumber="1" task="TSK_1"
+                  start="0" end="100">
+        <PhysicalResources>
+            <Physical id="PRS_1" />
+            <Physical id="PRS_2" />
+        </PhysicalResources>
+        <HumanResources>
+            <Human name="Antonio" />
+            <Human name="Maria" />
+        </HumanResources>
+    </TaskSchedule>
+</Schedule>

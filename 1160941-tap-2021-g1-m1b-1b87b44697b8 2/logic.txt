@@ -1,0 +1,82 @@
+enum State
+	- Processed
+	- In Process
+	- No started
+
+
+getAllOrdersTasks()
+-> Input: List[Order] (aquelas que podem ser processadas, excluindo as que já foram)
+-> Output: List[(order, productNumber, List[(Task, State)])]
+	(terá de repetir task caso quantity > 1)
+
+
+recursividade (List[(order, productNumber, List[(Task, State)])], finalList: List[TasksSchedule])
+	condição de paragem: todas as orders processadas
+	incremento: tempo da menor tarefa em execução (Math.min(diferença entre tempo atual e o tempo de cada tarefa))
+	Input: List[(order, productNumber, List[Task, State])]
+
+	getOrdersTasksToProcess()
+	assignPhysicalResourceToTask()
+	assignHumanResourceToTask()
+	List[TasksSchedule] list = createTasksSchedule()
+	listTemp = list :: finalList
+	return setTaskState(listTemp), listTemp
+
+
+
+getOrdersTasksToProcess()
+-> Input: List[(order, productNumber, List[(Task, State)])]
+-> Output: List[(order, productNumber, Task)]
+	para cada order buscar apenas a primeira task com o State "No started"
+
+
+
+setTaskState()
+-> Input: List[(order, productNumber, List[(Task, State)])], time, List[TasksSchedule]
+-> Output: List[(order, productNumber, List[(Task, State)])]
+	alterar o State das tasks que foram iniciadas (startTime == time)
+	alterar o State das tasks terminadas (endTime == time)
+
+
+
+assignPhysicalResourceToTask()
+-> Input: List[(order, productNumber, Task (primeiras de cada ordem))], lista de physical available
+-> Output: Map[Tasks (da fila para serem processadas), physical (para processar a task)]
+
+
+
+assignHumanResourceToTask()
+-> Input: Map[(order, productNumber, Task (da fila para serem processadas)), physical (para processar a task)], lista de humans available
+-> Output: List[((order, productNumber, Task), physical, human)]
+
+(buscar humans possiveis para cada resource - Tentar descobrir qual usar quando existe mais do que uma opção)
+
+1 Antonio Joao
+2 Maria
+3 Antonio
+
+1	(Antonio Joao) - (Maria) - (Antonio) = Joao
+
+
+
+
+--------------------------
+
+
+1 Antonio Joao
+2 Maria
+3 Antonio Joao
+
+1	(Antonio Joao) - (Maria) - (Antonio, Joao) =
+	(Antonio Joao) - (Antonio Joao) =
+
+
+
+--------------------------
+
+
+1 Antonio Joao
+2 Maria
+3 Antonio Maria
+
+1	(Antonio Joao) - (Maria) - (Antonio, Maria) = Joao
